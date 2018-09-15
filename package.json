@@ -1,0 +1,47 @@
+{
+  "name": "bootstrap",
+  "version": "0.0.0",
+  "description": "",
+  "author": "",
+  "license": "ISC",
+
+  "scripts": {
+    "test": "jest",
+    "prettier": "prettier --write \"src/**/*.js\"",
+    "clean": "rm -rf lib",
+    "compile": "babel src -d lib",
+    "build": "npm run prettier && npm run test && npm run clean && npm run compile"
+  },
+
+  "main": "lib/index.js",
+
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "jest": "^23.6.0",
+    "prettier": "^1.14.2"
+  },
+
+  "babel": {
+    "ignore": [
+      "**/*.test.js"
+    ],
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "node": "8"
+          }
+        }
+      ]
+    ]
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  },
+  "jest": {
+    "testURL": "http://localhost"
+  }
+}
